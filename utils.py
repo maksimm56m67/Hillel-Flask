@@ -13,9 +13,9 @@ def get_currency_exchange_rate( currency_a: str, currency_b: str, currency_date:
                 rate_buy = json.get("exchangeRate")[i].get('saleRate')
                 rate_sell = json.get("exchangeRate")[i].get('purchaseRate')
                 if curency_curse == 'НБУ':
-                    print(f'Курс НБУ на {currency_date} при конвертации {currency_a} в {currency_b} - курс {rate_buyNB} : {rate_sellNB}')
+                    return f'Курс НБУ на {currency_date} при конвертации {currency_a} в {currency_b} - курс {rate_buyNB} : {rate_sellNB}'
                 else:
-                    print(f'Курс ПриватБанка по при конвертации {currency_a} в {currency_b} - для покупки {rate_buy} и для продажи {rate_sell}')
+                    return f'Курс ПриватБанка по при конвертации {currency_a} в {currency_b} - для покупки {rate_buy} и для продажи {rate_sell}'
     return f"Ошибка api {response.status_code}: {json.get('errorDescription')}"
 
 
