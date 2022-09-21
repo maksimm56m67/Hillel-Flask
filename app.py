@@ -18,3 +18,5 @@ def get_rates():
     curency_curse = request.args.get('curency_curse', default='НБУ')
     result = get_currency_exchange_rate(currency_a, currency_b, currency_date, curency_curse)
     return result
+
+
